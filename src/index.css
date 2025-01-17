@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg font-primary;
+  }
+}
+
+.spin-wheel {
+  transition: transform 2s ease-out;
+  transform: rotate(var(--rotation, 0deg));
+}
