@@ -1,6 +1,7 @@
 export default function SpinWheel({items, rotation, isSpinning}: {items: string[], rotation: number, isSpinning: boolean}) {
 
   const getColor = (index: number) => {
+    // TODO : make this dynamic before turning into a npm package, for now it's fucking waste of time
     // const hue = (index * 137.5) % 360
     // return `hsl(${hue}, 70%, 50%)`
     if(index % 2 === 0) {
@@ -16,7 +17,7 @@ export default function SpinWheel({items, rotation, isSpinning}: {items: string[
         height="300"
         viewBox="0 0 100 100"
         // className='transition-transform duration-5000 ease-in-out'
-        className="spin-wheel"
+        className={ isSpinning ? "spin-wheel" : "spin-wheel"} // TODO: may be do a diffrent animation, wll think aoubt this later.. 
         style={{ transform: `rotate(${rotation}deg)` }}
       >
         {items.map((item, index) => {
