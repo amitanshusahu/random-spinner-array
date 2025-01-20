@@ -15,12 +15,15 @@ export default function RandomSpinner({ items }: {
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [previous, setPrevious] = useState(0);
+  const [newVar, setNewVar] = useState(0);
 
   const getRandomIndexAndRotation = (items: { id: string; name: string; question: string; }[]) => {
     const randomIndex = Math.floor(Math.random() * items.length);
     const anglePerItem = 360 / items.length;
     const centerAngle = anglePerItem * randomIndex + anglePerItem / 2;
     const rotation = 360 - centerAngle;
+    setNewVar(rotation);
     return { randomIndex, rotation };
   };
 
@@ -35,10 +38,19 @@ export default function RandomSpinner({ items }: {
     } else {
       setRotation(rotation);
     }
+
+    if(previous %2 == 0 && newVar %2 == 0) {
+      setRotation(rotation + 2160);
+    }
+    else if(previous %2 != 0 && newVar %2 != 0) {
+      setRotation(rotation + 1440);
+    }
     setTimeout(() => {
       setSelectedIndex(randomIndex);
       setSpinning(false);
       setShowModal(true)
+      setPrevious(rotation);
+      setRotation(0)
     }, 2000);
   };
 

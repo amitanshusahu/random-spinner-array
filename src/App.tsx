@@ -86,14 +86,14 @@ A strong number, the book explained, is a number where the sum of the factorials
 },
 {
   id: "q6",
-  name: "",
+  name: "magic number",
   question: `In the mystical village of Mathora, legends spoke of a special kind of number known as the "magic number." 
  According to the ancient scrolls, a magic number is a number that repeatedly sums the digits until a single-digit result is obtained, and if the result is 1, the number is considered magical.write a code to check if the number is magic number or not.
 (e.g. 1, 19, 28, 82, 91, 100, 118)`
 },
 {
   id: "q7",
-  name: "",
+  name: "Automorphic number",
   question: `In the enchanting land of Numerica, numbers held secrets and surprises. Among them was the curious "Automorphic number," a number whose square ends with the same digits as the number itself..write a code to check if the number is Automorphic number or not.
 (e.g 5,25,76,126)`
 },
