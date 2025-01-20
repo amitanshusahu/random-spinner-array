@@ -1,4 +1,8 @@
-export default function SpinWheel({items, rotation, isSpinning}: {items: string[], rotation: number, isSpinning: boolean}) {
+export default function SpinWheel({items, rotation, isSpinning}: {items: {
+  id: string;
+  name: string;
+  question: string;
+}[] , rotation: number, isSpinning: boolean}) {
 
   const getColor = (index: number) => {
     // TODO : make this dynamic before turning into a npm package, for now it's fucking waste of time
@@ -50,7 +54,7 @@ export default function SpinWheel({items, rotation, isSpinning}: {items: string[
                 transform={`rotate(${midAngle}, ${textX}, ${textY})`}
                 className="font-bold capitalize"
               >
-                {item}
+                {item.id}
               </text>
             </g>
           )
